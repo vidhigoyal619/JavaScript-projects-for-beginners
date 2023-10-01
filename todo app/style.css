@@ -1,85 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-
-:root{
-    --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px ;
-}
-*{
-    font-family: 'Marvel', sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light gray background */
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-}
-.wrap{
-   
-    background-image:url("/image/wp4991728-naruto-pc-wallpapers.jpg");
-    min-height: 100vh;
-    min-width: 80vh;
-    padding: 20px;
-
-
-}
-.heading{
-    margin: 10px auto 40px auto;
-
 }
 
-
-.heading .title{
-    font-size: 30px;
-    color: yellow;
-    font-weight: 500;
+h1 {
     text-align: center;
-    
-}
-
-.heading .sub-title{
-    font-size: 20px;
-    color: yellow;
-    font-weight: 300;
-    text-align: center;
-      
-}
-
-.task-manager{
-    min-width: 100px;
-    min-height: 200px;
-    margin: auto;
-    
-    
-    
-}
-
-
-.search-box ,.task-box, .message-box{
-    background-color: #ffffff;
-    padding: 20px 25px;
-    border-radius: 3px 0px;
-    margin: 20px 0px; 
-
-
-}
-
-.search-box .search {
-    display: flex;
-
-}
-
-.search-box input{
-    border-radius: 3px;
-    width: 100%;
-    margin-right: 10px;
+    color: #1e90ff; /* Dodger Blue text color */
+    background-color: #fff; /* White background */
     padding: 10px;
-    font-size: 16px;
 }
-.search-box i.reset{
-    font-size: 25px;
-    height: 100%;
-    padding: 10px 0px;
-    cursor: pointer;
-    
 
+#container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#input {
+    padding: 10px;
+    width: 60%;
+    border: 2px solid #1e90ff; /* Dodger Blue border */
+    border-radius: 5px;
+}
+
+#btn {
+    padding: 10px 20px;
+    background-color: #1e90ff; /* Dodger Blue background */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+ul {
+    padding: 0;
+}
+
+.lists {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f0e68c; /* Khaki background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.lists button {
+    padding: 5px 10px;
+    background-color: #ff6347; /* Tomato background */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.lists button:hover {
+    background-color: #ff4500; /* Darker Tomato on hover */
+    color: #fff; /* White text color on hover */
 }
