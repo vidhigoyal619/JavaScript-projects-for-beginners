@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; 
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 6rem;
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    /* above css is added */
+    text-align: center;
+    color: #1e90ff;  
+    padding: 10px;
+}
+
+#container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#input {
+    padding: 10px;
+    width: 60%;
+    border: 3px solid #1e90ff; /* Dodger Blue border */
+    border-radius: 5px;
+}
+
+#btn {
+    padding: 10px 20px;
+    background-color: #1e90ff; /* Dodger Blue background */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+ul {
+    padding: 0;
+}
+
+.lists {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #80bbf5; /* new colour added */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.lists button {
+    padding: 5px 10px;
+    background-color: rgb(60, 174, 89); /* New colour added */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.lists button:hover {
+    background-color: rgb(64, 236, 136); /* New colour added */
+    color: #fff; /* White text color on hover */
+}
+@media only screen and (max-width: 600px){
+    #container {
+    width: 80%;
+}
+#input {
+    width: 90%;
+    margin-bottom: 1rem;
+}
+#btn{
+    padding: 10px 10px;
+    font-size: 1rem;
+}
+}
+   </style>
+</head>
+<body>
+    <div>
+        <h1>To Do List</h1>
+    </div>
+    <div id="container">
+        <input type="text" id="input" placeholder="Enter your ToDo here...">&nbsp;
+        <button id="btn">Add ToDo</button><br><br>
+        <ul class="ul">
+            <!-- Existing list items go here -->
+        </ul>
+        <div id="success-message" class="success-message"></div>
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function () {
+            let input = document.getElementById('input').value;
+
+            if (input.trim() !== '') { // Check if input is not empty
+                let ul = document.querySelector('ul');
+
+                // Creating elements
+                let elem = document.createElement('li');
+                elem.className = 'lists';
+                elem.innerText = input;
+                let btn = document.createElement('button');
+                btn.value = 'Done';
+                btn.innerText = "Done";
+                let btn1 = document.createElement('button');
+                btn1.value = 'delete';
+                btn1.innerText = "Delete";
+
+                // Appending elements
+                elem.appendChild(btn);
+                elem.appendChild(btn1);
+                ul.appendChild(elem);
+
+                // Adding event listeners for Done and Delete buttons
+
+                btn.addEventListener('click', function () {
+                    elem.style.textDecoration = "line-through";
+                });
+
+                btn1.addEventListener('click', function () {
+                    elem.remove();
+                });
+// Display success message
+showSuccessMessage("Task added successfully");
+
+// Clear input
+document.getElementById('input').value = "";
+} else {
+showSuccessMessage("Please enter a task");
+}
+});
+        function showSuccessMessage(message) {
+        const successMessage = document.getElementById('success-message');
+        successMessage.textContent = message;
+        successMessage.style.color = "green";
+
+        // Clear the message after 3 seconds
+        setTimeout(function () {
+            successMessage.textContent = "";
+        }, 3000);
+    }
+        
+    </script>
+</body>
+</html>
